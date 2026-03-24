@@ -1,13 +1,19 @@
 "use client"
 
 import Link from "next/link"
-import { Github, Linkedin, Twitter, Dribbble } from "lucide-react"
+import { NewsletterSubscribeForm } from "@/components/forms/newsletter-subscribe-form"
+import {
+  BrandDribbbleIcon,
+  BrandGitHubIcon,
+  BrandLinkedInIcon,
+  BrandTwitterIcon,
+} from "@/components/icons/brand-social-icons"
 
 const socialLinks = [
-  { href: "#", icon: Twitter, label: "Twitter" },
-  { href: "#", icon: Linkedin, label: "LinkedIn" },
-  { href: "#", icon: Github, label: "GitHub" },
-  { href: "#", icon: Dribbble, label: "Dribbble" },
+  { href: "#", icon: BrandTwitterIcon, label: "Twitter" },
+  { href: "#", icon: BrandLinkedInIcon, label: "LinkedIn" },
+  { href: "#", icon: BrandGitHubIcon, label: "GitHub" },
+  { href: "#", icon: BrandDribbbleIcon, label: "Dribbble" },
 ]
 
 const footerLinks = [
@@ -38,7 +44,6 @@ export function Footer() {
                   key={social.label}
                   href={social.href}
                   className="p-2 rounded-full bg-secondary transition-colors hover:bg-opacity-10"
-                  style={{ ["--hover-bg" as any]: "#203eec20" }}
                   onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#203eec20")}
                   onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "")}
                   aria-label={social.label}
@@ -79,30 +84,7 @@ export function Footer() {
           <div>
             <h4 className="text-sm font-semibold mb-4">Stay Updated</h4>
             <p className="text-sm text-muted-foreground mb-4">Get meetup dates and event updates in your inbox.</p>
-            <form className="flex flex-col gap-3">
-              <input
-                type="email"
-                placeholder="Enter your email"
-                className="px-4 py-2.5 text-sm bg-secondary rounded-lg border-0 focus:ring-2 outline-none"
-                style={{ ["--tw-ring-color" as any]: "#203eec" }}
-              />
-              <button
-                type="submit"
-                className="px-4 py-2.5 text-sm font-medium text-white rounded-lg transition-all relative overflow-hidden"
-                style={{
-                  background: "linear-gradient(135deg, #203eec 0%, #00d4ff 100%)",
-                  boxShadow: "0 4px 20px rgba(32, 62, 236, 0.3)",
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.boxShadow = "0 8px 30px rgba(32, 62, 236, 0.5), 0 0 40px rgba(0, 212, 255, 0.3)"
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.boxShadow = "0 4px 20px rgba(32, 62, 236, 0.3)"
-                }}
-              >
-                Subscribe
-              </button>
-            </form>
+            <NewsletterSubscribeForm />
           </div>
         </div>
 
