@@ -4,7 +4,7 @@ import { notFound } from "next/navigation"
 import { Header } from "@/components/layout/header"
 import { Footer } from "@/components/layout/footer"
 import { getEventBySlug } from "@/lib/content/events"
-import { SITE_URL, pageKeywords } from "@/lib/seo"
+import { SITE_URL, TITLE_BASE, pageKeywords } from "@/lib/seo"
 
 type EventDetailPageProps = {
   params: Promise<{ slug: string }>
@@ -39,7 +39,7 @@ export async function generateMetadata({ params }: EventDetailPageProps): Promis
       canonical: `/events/${event.slug}`,
     },
     openGraph: {
-      title: `${event.title} | Metropolis Retro`,
+      title: `${event.title} | ${TITLE_BASE}`,
       description: event.description,
       url: `${SITE_URL}/events/${event.slug}`,
       type: "article",
@@ -52,7 +52,7 @@ export async function generateMetadata({ params }: EventDetailPageProps): Promis
     },
     twitter: {
       card: "summary_large_image",
-      title: `${event.title} | Metropolis Retro`,
+      title: `${event.title} | ${TITLE_BASE}`,
       description: event.description,
       images: [`${SITE_URL}${event.image}`],
     },

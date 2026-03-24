@@ -11,7 +11,7 @@ import {
   slugifyBlogTaxonomy,
   type BlogPost,
 } from "@/lib/content/blog-posts"
-import { SITE_URL, pageKeywords } from "@/lib/seo"
+import { BLOG_TITLE_BASE, SITE_URL, TITLE_BASE, pageKeywords } from "@/lib/seo"
 
 export type BlogArchiveViewModel = {
   eyebrow: string
@@ -38,7 +38,7 @@ export const blogIndexMetadata: Metadata = {
     canonical: "/blog",
   },
   openGraph: {
-    title: "Blog | Metropolis Retro",
+    title: `Blog | ${TITLE_BASE}`,
     description:
       "Read Metropolis Retro blog posts on chess training, tournament preparation, openings, and practical improvement for club players.",
     url: `${SITE_URL}/blog`,
@@ -46,7 +46,7 @@ export const blogIndexMetadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Blog | Metropolis Retro",
+    title: `Blog | ${TITLE_BASE}`,
     description:
       "Read Metropolis Retro blog posts on chess training, tournament preparation, openings, and practical improvement for club players.",
   },
@@ -120,14 +120,14 @@ export function getBlogCategoryMetadata(slug: string): Metadata {
       canonical: `/blog/category/${slug}`,
     },
     openGraph: {
-      title: `${category} Articles | Metropolis Retro Blog`,
+      title: `${category} Articles | ${BLOG_TITLE_BASE}`,
       description,
       url: `${SITE_URL}/blog/category/${slug}`,
       type: "website",
     },
     twitter: {
       card: "summary_large_image",
-      title: `${category} Articles | Metropolis Retro Blog`,
+      title: `${category} Articles | ${BLOG_TITLE_BASE}`,
       description,
     },
   }
@@ -157,14 +157,14 @@ export function getBlogTagMetadata(slug: string): Metadata {
       canonical: `/blog/tag/${slug}`,
     },
     openGraph: {
-      title: `#${tag} Articles | Metropolis Retro Blog`,
+      title: `#${tag} Articles | ${BLOG_TITLE_BASE}`,
       description,
       url: `${SITE_URL}/blog/tag/${slug}`,
       type: "website",
     },
     twitter: {
       card: "summary_large_image",
-      title: `#${tag} Articles | Metropolis Retro Blog`,
+      title: `#${tag} Articles | ${BLOG_TITLE_BASE}`,
       description,
     },
   }

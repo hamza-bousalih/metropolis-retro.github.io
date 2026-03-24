@@ -2,7 +2,7 @@ import type { Metadata } from "next"
 import { Header } from "@/components/layout/header"
 import { Footer } from "@/components/layout/footer"
 import { ContactForm } from "@/components/forms/contact-form"
-import { SITE_URL, pageKeywords } from "@/lib/seo"
+import { SITE_URL, TITLE_BASE, pageKeywords } from "@/lib/seo"
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     canonical: "/contact",
   },
   openGraph: {
-    title: "Contact | Metropolis Retro",
+    title: `Contact | ${TITLE_BASE}`,
     description:
       "Contact Metropolis Retro for Brisbane meetup details, event registration, and chess club membership questions.",
     url: `${SITE_URL}/contact`,
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Contact | Metropolis Retro",
+    title: `Contact | ${TITLE_BASE}`,
     description:
       "Contact Metropolis Retro for Brisbane meetup details, event registration, and chess club membership questions.",
   },

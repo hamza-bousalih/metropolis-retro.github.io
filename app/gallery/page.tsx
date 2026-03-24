@@ -3,11 +3,11 @@ import type { Metadata } from "next"
 import { Header } from "@/components/layout/header"
 import { Footer } from "@/components/layout/footer"
 import { GalleryGrid } from "@/components/sections/gallery-grid"
-import { SITE_URL, pageKeywords } from "@/lib/seo"
+import { SITE_URL, TITLE_BASE, pageKeywords } from "@/lib/seo"
 import { galleryImages } from "@/lib/content/gallery"
 
 export const metadata: Metadata = {
-  title: "Gallery | Metropolis Retro Chess Club",
+  title: "Gallery",
   description:
     "Explore our photo gallery showcasing tournaments, training sessions, community events, and members of Metropolis Retro chess club in Brisbane.",
   keywords: pageKeywords(["chess club gallery", "tournament photos", "chess training images"]),
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     canonical: "/gallery",
   },
   openGraph: {
-    title: "Gallery | Metropolis Retro Chess Club",
+    title: `Gallery | ${TITLE_BASE}`,
     description:
       "Browse photos from our tournaments, training sessions, and community gatherings at Metropolis Retro.",
     url: `${SITE_URL}/gallery`,
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Gallery | Metropolis Retro Chess Club",
+    title: `Gallery | ${TITLE_BASE}`,
     description:
       "Browse photos from our tournaments, training sessions, and community gatherings at Metropolis Retro.",
   },

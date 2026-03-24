@@ -13,28 +13,28 @@ import { Insights } from "@/components/sections/insights"
 import { Faq } from "@/components/sections/faq"
 import { FinalCTA } from "@/components/sections/final-cta"
 import { GradientBar } from "@/components/ui/gradient-bar"
-import { SITE_URL, pageKeywords } from "@/lib/seo"
+import { CLUB_NAME, SITE_URL, TITLE_BASE, pageKeywords } from "@/lib/seo"
 
 export const metadata: Metadata = {
   title: "Chess Club in Brisbane",
   description:
-    "Metropolis Retro is a Brisbane chess club hosting weekly meetups, training sessions, and official events for players of all levels.",
+    `${CLUB_NAME} is a Brisbane chess club hosting weekly meetups, training sessions, and official events for players of all levels.`,
   keywords: pageKeywords(["Brisbane chess club", "weekly chess meetup", "chess training Brisbane"]),
   alternates: {
     canonical: "/",
   },
   openGraph: {
-    title: "Metropolis Retro | Chess Club in Brisbane",
+    title: `${TITLE_BASE} | Chess Club in Brisbane`,
     description:
-      "Join weekly Brisbane chess meetups, learning sessions, and competitive club events with Metropolis Retro.",
+      `Join weekly Brisbane chess meetups, learning sessions, and competitive club events with ${CLUB_NAME}.`,
     url: SITE_URL,
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Metropolis Retro | Chess Club in Brisbane",
+    title: `${TITLE_BASE} | Chess Club in Brisbane`,
     description:
-      "Join weekly Brisbane chess meetups, learning sessions, and competitive club events with Metropolis Retro.",
+      `Join weekly Brisbane chess meetups, learning sessions, and competitive club events with ${CLUB_NAME}.`,
   },
 }
 

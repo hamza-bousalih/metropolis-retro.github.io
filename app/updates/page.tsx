@@ -4,7 +4,7 @@ import { Footer } from "@/components/layout/footer"
 import Link from "next/link"
 import { ArrowUpRight } from "lucide-react"
 import { updates } from "@/lib/content/updates"
-import { SITE_URL, pageKeywords } from "@/lib/seo"
+import { SITE_URL, TITLE_BASE, pageKeywords } from "@/lib/seo"
 
 export const metadata: Metadata = {
   title: "Updates",
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     canonical: "/updates",
   },
   openGraph: {
-    title: "Updates | Metropolis Retro",
+    title: `Updates | ${TITLE_BASE}`,
     description:
       "Read the latest Metropolis Retro announcements, schedule updates, and club news for Brisbane chess events and meetups.",
     url: `${SITE_URL}/updates`,
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Updates | Metropolis Retro",
+    title: `Updates | ${TITLE_BASE}`,
     description:
       "Read the latest Metropolis Retro announcements, schedule updates, and club news for Brisbane chess events and meetups.",
   },

@@ -4,7 +4,7 @@ import { notFound } from "next/navigation"
 import { Header } from "@/components/layout/header"
 import { Footer } from "@/components/layout/footer"
 import { getUpdateBySlug } from "@/lib/content/updates"
-import { SITE_URL, pageKeywords } from "@/lib/seo"
+import { SITE_URL, TITLE_BASE, pageKeywords } from "@/lib/seo"
 
 type UpdateDetailPageProps = {
   params: Promise<{ slug: string }>
@@ -37,7 +37,7 @@ export async function generateMetadata({ params }: UpdateDetailPageProps): Promi
       canonical: `/updates/${update.slug}`,
     },
     openGraph: {
-      title: `${update.title} | Metropolis Retro`,
+      title: `${update.title} | ${TITLE_BASE}`,
       description: update.excerpt,
       url: `${SITE_URL}/updates/${update.slug}`,
       type: "article",
@@ -50,7 +50,7 @@ export async function generateMetadata({ params }: UpdateDetailPageProps): Promi
     },
     twitter: {
       card: "summary_large_image",
-      title: `${update.title} | Metropolis Retro`,
+      title: `${update.title} | ${TITLE_BASE}`,
       description: update.excerpt,
       images: [`${SITE_URL}${update.image}`],
     },

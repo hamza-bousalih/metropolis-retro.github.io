@@ -1,7 +1,7 @@
 import type { Metadata } from "next"
 import { Header } from "@/components/layout/header"
 import { Footer } from "@/components/layout/footer"
-import { SITE_URL, pageKeywords } from "@/lib/seo"
+import { SITE_URL, TITLE_BASE, pageKeywords } from "@/lib/seo"
 
 export const metadata: Metadata = {
   title: "Privacy Policy",
@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     canonical: "/privacy-policy",
   },
   openGraph: {
-    title: "Privacy Policy | Metropolis Retro",
+    title: `Privacy Policy | ${TITLE_BASE}`,
     description:
       "Read the Metropolis Retro privacy policy, including how we collect, use, and retain member communication data.",
     url: `${SITE_URL}/privacy-policy`,
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Privacy Policy | Metropolis Retro",
+    title: `Privacy Policy | ${TITLE_BASE}`,
     description:
       "Read the Metropolis Retro privacy policy, including how we collect, use, and retain member communication data.",
   },

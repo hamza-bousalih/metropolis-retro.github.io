@@ -3,20 +3,20 @@ import Link from "next/link"
 import { Header } from "@/components/layout/header"
 import { Footer } from "@/components/layout/footer"
 import { GradientBar } from "@/components/ui/gradient-bar"
-import { SITE_URL } from "@/lib/seo"
+import { SITE_URL, TITLE_BASE } from "@/lib/seo"
 
 export const metadata: Metadata = {
   title: "Page Not Found",
   description: "The page could not be found on Metropolis Retro.",
   openGraph: {
-    title: "Page Not Found | Metropolis Retro",
+    title: `Page Not Found | ${TITLE_BASE}`,
     description: "The page could not be found on Metropolis Retro.",
     url: `${SITE_URL}/404`,
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Page Not Found | Metropolis Retro",
+    title: `Page Not Found | ${TITLE_BASE}`,
     description: "The page could not be found on Metropolis Retro.",
   },
   robots: {

@@ -7,7 +7,7 @@ import { Header } from "@/components/layout/header"
 import { Footer } from "@/components/layout/footer"
 import { CommentsSection } from "@/components/blog/comments-section"
 import { getBlogPostBySlug, slugifyBlogTaxonomy } from "@/lib/content/blog-posts"
-import { SITE_URL, pageKeywords } from "@/lib/seo"
+import { BLOG_TITLE_BASE, SITE_URL, pageKeywords } from "@/lib/seo"
 
 type BlogPostPageProps = {
   params: Promise<{ slug: string }>
@@ -36,7 +36,7 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
       canonical: `/blog/${post.slug}`,
     },
     openGraph: {
-      title: `${post.title} | Metropolis Retro Blog`,
+      title: `${post.title} | ${BLOG_TITLE_BASE}`,
       description: post.excerpt,
       url: `${SITE_URL}/blog/${post.slug}`,
       type: "article",
@@ -52,7 +52,7 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
     },
     twitter: {
       card: "summary_large_image",
-      title: `${post.title} | Metropolis Retro Blog`,
+      title: `${post.title} | ${BLOG_TITLE_BASE}`,
       description: post.excerpt,
       images: [`${SITE_URL}${post.coverImage}`],
     },

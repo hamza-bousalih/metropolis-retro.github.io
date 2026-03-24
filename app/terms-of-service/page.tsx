@@ -1,7 +1,7 @@
 import type { Metadata } from "next"
 import { Header } from "@/components/layout/header"
 import { Footer } from "@/components/layout/footer"
-import { SITE_URL, pageKeywords } from "@/lib/seo"
+import { SITE_URL, TITLE_BASE, pageKeywords } from "@/lib/seo"
 
 export const metadata: Metadata = {
   title: "Terms of Service",
@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     canonical: "/terms-of-service",
   },
   openGraph: {
-    title: "Terms of Service | Metropolis Retro",
+    title: `Terms of Service | ${TITLE_BASE}`,
     description:
       "Review Metropolis Retro terms for club participation, event changes, and general liability conditions.",
     url: `${SITE_URL}/terms-of-service`,
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Terms of Service | Metropolis Retro",
+    title: `Terms of Service | ${TITLE_BASE}`,
     description:
       "Review Metropolis Retro terms for club participation, event changes, and general liability conditions.",
   },

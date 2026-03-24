@@ -7,7 +7,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion"
-import { SITE_URL, pageKeywords } from "@/lib/seo"
+import { SITE_URL, TITLE_BASE, pageKeywords } from "@/lib/seo"
 
 const faqItems = [
   {
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
     canonical: "/faq",
   },
   openGraph: {
-    title: "FAQ | Metropolis Retro",
+    title: `FAQ | ${TITLE_BASE}`,
     description:
       "Find answers to common questions about Metropolis Retro meetups, formats, registration, and participation in Brisbane.",
     url: `${SITE_URL}/faq`,
@@ -54,7 +54,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "FAQ | Metropolis Retro",
+    title: `FAQ | ${TITLE_BASE}`,
     description:
       "Find answers to common questions about Metropolis Retro meetups, formats, registration, and participation in Brisbane.",
   },

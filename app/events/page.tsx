@@ -4,7 +4,7 @@ import { Footer } from "@/components/layout/footer"
 import Link from "next/link"
 import { ArrowUpRight } from "lucide-react"
 import { events } from "@/lib/content/events"
-import { SITE_URL, pageKeywords } from "@/lib/seo"
+import { SITE_URL, TITLE_BASE, pageKeywords } from "@/lib/seo"
 
 export const metadata: Metadata = {
   title: "Events",
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     canonical: "/events",
   },
   openGraph: {
-    title: "Events | Metropolis Retro",
+    title: `Events | ${TITLE_BASE}`,
     description:
       "Browse upcoming Metropolis Retro chess meetups and tournament formats across Brisbane, including rapid, classical, and workshop sessions.",
     url: `${SITE_URL}/events`,
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Events | Metropolis Retro",
+    title: `Events | ${TITLE_BASE}`,
     description:
       "Browse upcoming Metropolis Retro chess meetups and tournament formats across Brisbane, including rapid, classical, and workshop sessions.",
   },

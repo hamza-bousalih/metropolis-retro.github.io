@@ -1,7 +1,7 @@
 import type { Metadata } from "next"
 import { Header } from "@/components/layout/header"
 import { Footer } from "@/components/layout/footer"
-import { SITE_URL, pageKeywords } from "@/lib/seo"
+import { SITE_URL, TITLE_BASE, pageKeywords } from "@/lib/seo"
 
 const pillars = [
   {
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     canonical: "/about",
   },
   openGraph: {
-    title: "About | Metropolis Retro",
+    title: `About | ${TITLE_BASE}`,
     description:
       "Learn about Metropolis Retro, a Brisbane chess club focused on community, structured improvement, and official events.",
     url: `${SITE_URL}/about`,
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "About | Metropolis Retro",
+    title: `About | ${TITLE_BASE}`,
     description:
       "Learn about Metropolis Retro, a Brisbane chess club focused on community, structured improvement, and official events.",
   },
