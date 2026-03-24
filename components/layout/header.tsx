@@ -115,6 +115,9 @@ export function Header() {
               <Link href="/blog" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
                 Blog
               </Link>
+              <Link href="/gallery" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                Gallery
+              </Link>
             </div>
 
             {/* CTA Button */}
@@ -169,6 +172,13 @@ export function Header() {
                 className="text-3xl font-semibold hover:text-muted-foreground transition-colors"
               >
                 Blog
+              </Link>
+              <Link
+                href="/gallery"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="text-3xl font-semibold hover:text-muted-foreground transition-colors"
+              >
+                Gallery
               </Link>
             </nav>
             <div className="mt-auto">
