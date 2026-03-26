@@ -34,7 +34,12 @@ repos:
           Zip files are not allowed in the repository as they are hard to
           track and have security implications. Please remove the zip file from the repository.
         files: (?i)\.zip$
-
+      - id: bun-install
+        name: run bun install
+        description: Ensure that the bun dependencies can install
+        entry: bun install
+        language: system
+        pass_filenames: false
   # GO-based
   # - repo: https://github.com/gitleaks/gitleaks
   #   rev: v8.30.0
@@ -52,14 +57,6 @@ repos:
         args: ["644"]
         files: \.md$
         stages: [manual]
-
-  - repo: https://github.com/editorconfig-checker/editorconfig-checker.python
-    rev: 3.6.1
-    hooks:
-      - id: editorconfig-checker
-        name: run editorconfig-checker
-        description: a tool to verify that your files are in harmony with your .editorconfig
-        alias: ec
 
   # - repo: https://github.com/oxipng/oxipng
   #  rev: v10.1.0
@@ -122,6 +119,24 @@ repos:
   #      name: run biome-check
   #      description: Run Biome linter and formatter for JSON files
   #      additional_dependencies: ["@biomejs/biome"]
+
+  - repo: https://github.com/editorconfig-checker/editorconfig-checker.python
+    rev: 3.6.1
+    hooks:
+      - id: editorconfig-checker
+        name: run editorconfig-checker
+        description: a tool to verify that your files are in harmony with your .editorconfig
+        alias: ec
+
+  - repo: https://github.com/pre-commit/mirrors-eslint
+    rev: v10.1.0
+    hooks:
+      - id: eslint
+        name: run eslint
+        description: ESLint statically analyzes your code to quickly find problems.
+        entry: eslint --config eslint.config.mjs --fix
+        language: node
+        files: \.(js|mjs|cjs|ts|mts|cts|jsx|tsx)$
 
   - repo: https://github.com/igorshubovych/markdownlint-cli
     rev: v0.48.0
