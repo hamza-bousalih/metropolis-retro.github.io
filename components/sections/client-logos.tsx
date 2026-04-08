@@ -1,4 +1,4 @@
-"use client";
+import { SectionTitle } from "@/components/ui/section-title"
 
 const names = [
   "John Bampton",
@@ -17,22 +17,44 @@ const names = [
   "Lichess"
 ];
 
+const marqueeMask =
+  "[mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)] [-webkit-mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]";
+
 export function ClientLogos() {
   return (
-    <section className="py-16 border-border overflow-hidden md:py-10 border-t-[0]">
-      <div className="max-w-[1280px] mx-auto px-6 md:px-12 mb-8">
-        <p className="text-sm text-muted-foreground text-center">Played by chess lovers, gamers and socialites at venues across Brisbane and globally</p>
+    <section
+      className="relative py-20 overflow-hidden md:py-24"
+      aria-label="Community members and venues"
+    >
+      <div
+        className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-border to-transparent"
+        aria-hidden
+      />
+      <div className="absolute inset-0 bg-gradient-to-b from-secondary/25 via-transparent to-transparent pointer-events-none" />
+
+      <div className="relative max-w-[1280px] mx-auto px-6 md:px-12 mb-10 md:mb-12 text-center">
+        <SectionTitle className="text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight text-balance max-w-2xl mx-auto">
+          Players and places
+        </SectionTitle>
+        <p className="mt-4 md:mt-5 text-sm md:text-base text-muted-foreground leading-relaxed max-w-xl mx-auto">
+          Played by chess lovers, gamers, and socialites at venues across Brisbane and around the world.
+        </p>
       </div>
-      <div className="relative flex items-center min-h-[2.75rem] md:min-h-[3.25rem]">
-        <div className="flex items-center gap-x-10 md:gap-x-14 animate-marquee hover:[animation-play-state:paused]">
-          {[...names, ...names].map((client, index) => (
-            <div
-              key={`${client}-${index}`}
-              className="shrink-0 w-max text-2xl md:text-3xl font-semibold text-muted-foreground/50 whitespace-nowrap"
-            >
-              {client}
-            </div>
-          ))}
+
+      <div
+        className={`group relative max-w-[1280px] mx-auto px-6 md:px-12 ${marqueeMask}`}
+      >
+        <div className="relative flex items-center min-h-[3rem] md:min-h-[3.25rem] cursor-default">
+          <div className="flex items-center gap-x-4 md:gap-x-6 animate-marquee px-2 group-hover:[animation-play-state:paused]">
+            {[...names, ...names].map((client, index) => (
+              <span
+                key={`${client}-${index}`}
+                className="shrink-0 whitespace-nowrap px-4 py-2 text-sm font-medium border border-border rounded-full hover:bg-secondary transition-colors cursor-default"
+              >
+                {client}
+              </span>
+            ))}
+          </div>
         </div>
       </div>
     </section>
